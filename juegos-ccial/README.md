@@ -1,41 +1,30 @@
 # Juegos CCI AL
 
-Generador de juegos grupales con IA para CCI América Latina.
+Generador de juegos grupales para CCI América Latina.
 
 ## Archivos
 
-```
+```text
 juegos-ccial/
 ├── index.html      # Estructura principal
-├── styles.css      # Estilos (identidad CCI AL)
-├── app.js          # Lógica e integración con Claude API
+├── styles.css      # Estilos de la herramienta
+├── app.js          # Lógica de generación local
 ├── logo-ccial.png  # Logo oficial CCI AL
 └── README.md       # Este archivo
 ```
 
-## Integración en tu sitio web
+## Uso
 
-### Opción A — Página independiente
-Sube los 4 archivos a tu servidor y accede a `index.html`.
+La página está pensada para publicarse como una ruta estática:
 
-### Opción B — Dentro de otra página (iframe)
-```html
-<iframe
-  src="juegos-ccial/index.html"
-  width="100%"
-  height="800px"
-  frameborder="0"
-  style="border-radius: 16px;"
-></iframe>
+```text
+/juegos-ccial
 ```
 
-### Opción C — Incrustar como sección
-Copia el contenido de `index.html` dentro de tu `<body>` existente,
-e importa `styles.css` y `app.js` en tu página principal.
+Los recursos se cargan con rutas absolutas dentro de `/juegos-ccial/`, para que funcionen aunque el navegador abra la ruta sin barra final.
 
 ## Notas
 
-- La app llama directamente a la API de Anthropic desde el navegador.
-- El modelo utilizado es `claude-sonnet-4-20250514`.
-- Requiere conexión a internet para funcionar.
-- Responsive: funciona en móvil y desktop.
+- No requiere clave de API ni backend.
+- La generación se hace en el navegador con plantillas locales.
+- Funciona en móvil y desktop.

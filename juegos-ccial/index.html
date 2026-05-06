@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juegos CCI AL — Recreación con Propósito</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <img src="logo-ccial.png" alt="CCI AL Logo" class="header-logo" />
+        <div class="header-text">
+          <span class="header-title">Juegos CCI AL</span>
+          <span class="header-subtitle">Recreación con Propósito · CCI América Latina</span>
+        </div>
+      </div>
+    </div>
+    <div class="header-stripe"></div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="app-main">
+
+    <!-- CATEGORÍAS -->
+    <section class="section-label">Selecciona una categoría</section>
+    <div class="categories-grid" id="categoriesGrid">
+      <button class="cat-btn active" data-cat="campamento" data-desc="actividades al aire libre, naturaleza y convivencia">
+        <span class="cat-emoji">🏕️</span>
+        <span class="cat-name">Campamento</span>
+      </button>
+      <button class="cat-btn" data-cat="reunion" data-desc="dinámicas de integración para grupos en espacios cerrados">
+        <span class="cat-emoji">🤝</span>
+        <span class="cat-name">Reunión</span>
+      </button>
+      <button class="cat-btn" data-cat="capacitacion" data-desc="juegos de aprendizaje, reflexión y trabajo en equipo">
+        <span class="cat-emoji">📚</span>
+        <span class="cat-name">Capacitación</span>
+      </button>
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="form-card">
+      <div class="form-card-title">
+        <span id="formCatEmoji">🏕️</span>
+        <span id="formCatLabel">Campamento</span>
+        <span class="form-card-title-sep">—</span>
+        Planifica tu actividad
+      </div>
+
+      <div class="inputs-row">
+        <div class="input-group">
+          <label for="inputTiempo">⏱ Tiempo total (min)</label>
+          <input type="number" id="inputTiempo" min="1" placeholder="ej. 30" />
+        </div>
+        <div class="input-group">
+          <label for="inputCantidad">🎲 Número de juegos</label>
+          <input type="number" id="inputCantidad" min="1" max="20" placeholder="ej. 5" />
+        </div>
+      </div>
+
+      <div class="tipo-section">
+        <label class="tipo-label">👥 Tipo de grupo</label>
+        <div class="tipo-grid" id="tipoGrid">
+          <button class="tipo-btn active" data-tipo="niños">Niños</button>
+          <button class="tipo-btn" data-tipo="jóvenes">Jóvenes</button>
+          <button class="tipo-btn" data-tipo="adultos">Adultos</button>
+          <button class="tipo-btn" data-tipo="familia">Familia</button>
+        </div>
+      </div>
+
+      <button class="generate-btn" id="generateBtn">
+        <span class="btn-icon">🔥</span>
+        <span class="btn-text">Generar Juegos</span>
+      </button>
+    </div>
+
+    <!-- ERROR -->
+    <div class="error-box hidden" id="errorBox">
+      ⚠️ Ocurrió un error generando los juegos. Intenta de nuevo.
+    </div>
+
+    <!-- RESULTADOS -->
+    <div class="results-section hidden" id="resultsSection">
+      <div class="results-header">
+        <span class="results-count" id="resultsCount"></span>
+        <span class="results-time" id="resultsTime"></span>
+      </div>
+      <div id="gamesList"></div>
+      <div class="results-footer">
+        🏕️ MAYORDOMÍA · RECREACIÓN CON PROPÓSITO · COMUNIDAD · FE
+      </div>
+    </div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
